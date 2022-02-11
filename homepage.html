@@ -29,10 +29,19 @@
       </header>
       <main class="row">
         <div class="col s12 m3 search"></div>
-        <div class="col s10 m9 display"></div>
-        <div class="col s12 results"></div>
+        <div class="col s10 m9">
+          <div class = "row results">
+            <!-- <div class="card">
+              <a href="https://www.youtube.com/watch?v=${videos.id.videoId}"><img width="200" height="200" src="${videos[i].snippet.thumbnails.medium.url}" alt="${videos[i].snippet.description}"></a>
+              
+              <p class="card-title"><a target= "_blank" href="https://www.youtube.com/watch?v=${videos[i].id.videoId}"></a></p>
+            </div> -->
+          </div>
+        </div>
+        <div class="col s12">
+        </div>
       </main>
-
+      
       <!-- start of footer -->
       <footer class="page-footer grey darken-2">
         <div class="container">
@@ -58,7 +67,10 @@
         </div>
       </footer>
       <!-- end of footer -->
+        <script src="https://apis.google.com/js/api.js">
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script src="./assets/js/youtube.js"></script>
         <script src="" async defer></script>
     </body>
 </html>

@@ -21,9 +21,37 @@ header{
     border: 3px solid grey;
 }
 .results{
-    height:100vh;
     border: 3px solid grey;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
 }
+/* javascript added cards */
+.card{
+    margin:10px;
+    max-width:300px;
+    border-radius: 15px;
+}
+.card img{
+    border-radius: 15px;
+}
+.card img:hover{
+    opacity: 70%;
+}
+.card .card-title{
+    font-size: 12px;
+    height: 40px;
+    text-align: center;
+}
+.card-title a{
+    color:rgb(68, 0, 255);
+    text-decoration: none;
+}
+.card-title a:visited{
+    color:rgb(78, 78, 78);
+}
+/* end of javascript added cards */
+
 /* end of main section */
 footer{
     background-color: var(--dark);
