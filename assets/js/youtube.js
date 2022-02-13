@@ -36,9 +36,6 @@ var searchItem = function(){
     event.preventDefault();
     newUrl = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=24&q=" + searchEl.value + "&type=video&key=AIzaSyCH8PUHPaF-bU95k7xnQcjjG9U740oLEI8";
     apiUrl = newUrl
-    console.log(search);
-    console.log(newUrl);
-    console.log(apiUrl);
 }
 
 buttonEl.addEventListener("click", function(){
