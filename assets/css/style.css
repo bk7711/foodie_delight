@@ -26,6 +26,9 @@ header{
     flex-wrap:wrap;
     justify-content: space-around;
 }
+.col{
+    flex-basis:0;
+}
 /* javascript added cards */
 .card{
     margin:10px;
