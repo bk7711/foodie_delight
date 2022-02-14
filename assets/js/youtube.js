@@ -32,6 +32,8 @@ var getVideo = function(){
     })
 };
 
+
+
 //get value of search field
 var searchItem = function(){
     
@@ -40,6 +42,15 @@ var searchItem = function(){
     newUrl = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=24&q=" + searchEl.value + "&type=video&key=AIzaSyCH8PUHPaF-bU95k7xnQcjjG9U740oLEI8";
     apiUrl = newUrl
 }
+
+//load carousel
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems,{
+        padding: 10,
+        dist: -50
+    })
+  });
 
 //when search button is clicked, display api results
 buttonEl.addEventListener("click", function(){

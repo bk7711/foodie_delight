@@ -13,7 +13,7 @@ header{
 }
 /* start of main section */
 .search{
-    height:60vh;
+    height:100vh;
     border: 3px solid grey;
 }
 .display{
