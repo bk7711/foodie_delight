@@ -4,11 +4,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Foodie Delight</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
@@ -16,11 +17,11 @@
        <!-- start of navbar -->
        <nav class="grey darken-2">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Logo</a>
+          <a href="#" class="brand-logo">Foodie Delight</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">Home</a></li>
-            <li><a href="badges.html">Component 1</a></li>
-            <li><a href="collapsible.html">Component 2</a></li>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="#savedRecipe">Saved Recipes</a></li>
+            <!-- <li><a href="collapsible.html">Component 2</a></li> -->
           </ul>
         </div>
       </nav>
@@ -28,20 +29,56 @@
       <header class="header grey">
 
       </header>
-      <main class="row">
-        <div class="col s12 m3 search row">
-          <div class="input-field col s6">
-            <input placeholder="Placeholder" id="search" type="text" class="validate">
-            <label for="recipe_search">Recipe Search</label>
-              <button type="submit" class="waves-effect waves-light btn">Search</button>
+      <main>
+        <div class = "row">
+            <div class="col s12 m5 search row">
+                <div class="input-field">
+                  <input placeholder="Search Recipe" id="search" type="text" class="validate" name="search">
+                  
+                  
+                    <button type="submit" class="waves-effect waves-light btn">Search</button>
+                    <br>
+                    <a class="waves-effect waves-light modal-trigger" href="#modal1">Search History</a>
+               <!-- modal of search results      -->
+               
+                  <div class="recipes-container">
+                  <h3>RECIPES</h3>
+                  
+                  </div>
+               <!-- Modal Structure -->
+               <div id="modal1" class="modal">
+                 <div class="modal-content">
+                   <h4>Search History</h4>
+                   <p>Recipes</p>
+                 </div>
+                 <div class="modal-footer">
+                   <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                 </div>
+               </div>
+          </div>
+            </div>
+            
+            <div class="col s12 m7">
+              <h3>VIDEO TUTORIALS</h3>
+              <div class = "row results">
+                
+              </div>
+            </div>
+        </div>
+        
+        <div class="col s12" id = "savedRecipes">
+          <div class="carousel">
+            <h3>Saved Recipes</h3>
+            <a class="carousel-item" href="#one!"><img src="./assets/images/celldesk.jpg"></a>
+            <a class="carousel-item" href="#two!"><img src="./assets/images/connect.jpg"></a>
+            <a class="carousel-item" href="#three!"><img src="./assets/images/desk.jpg"></a>
+            <a class="carousel-item" href="#four!"><img src="./assets/images/paintset.jpg"></a>
+            <a class="carousel-item" href="#five!"><img src="./assets/images/wooddesk.jpg"></a>
           </div>
         </div>
-        <div class="col s10 m9">
-          <div class = "row results"></div>
-        </div>
-        <div class="col s12">
-        </div>
+        
       </main>
+      
       
       <!-- start of footer -->
       <footer class="page-footer grey darken-2">
@@ -72,6 +109,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./assets/js/recipe.js"></script>
         <script src="./assets/js/youtube.js"></script>
         
     </body>
