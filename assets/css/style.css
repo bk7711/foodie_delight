@@ -14,7 +14,6 @@ header{
 /* start of main section */
 .search{
     height:100vh;
-    border-right: 2px solid grey;
 }
 .display{
     height:60vh;
@@ -25,7 +24,7 @@ header{
     display:flex;
     flex-wrap:wrap;
     justify-content: space-around;
-    height:100%;
+    height:auto;
 }
 .col{
     flex-basis:0;
@@ -36,13 +35,34 @@ h3{
     font-size: 30px;
     text-decoration: underline;
 }
+.recipes-container{
+    margin-left:10px;
+    overflow:scroll;
+    height:100vh;
+}
 .recipes-container a{
+    text-align: center;
+    height:100%;
+}
+.recipes-container .recipe{
+    display:flex;
+    border: 3px solid grey;
+}
+.recipes-container img{
+    border-radius: 15px;
+    width:200px;
+    height:150px;  
+}
+#ingredients{
+    margin-left: 10px;
+}
+.picture p{
     text-align: center;
 }
 /* javascript added cards */
-.card{
+.videos .card{
     margin:10px;
-    max-width:300px;
+    max-width:200px;
     border-radius: 15px;
 }
 .card img{
@@ -66,6 +86,10 @@ h3{
 /* end of javascript added cards */
 
 /* end of main section */
+/* carousel */
+#savedRecipes{
+    position:relative;
+}
 footer{
     background-color: var(--dark);
 }

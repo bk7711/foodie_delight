@@ -20,7 +20,7 @@ var getVideo = function(){
                     videoEl.setAttribute("id", videos[i].id.videoId);
                     videoEl.setAttribute("class", "card");
                     videoEl.innerHTML = `
-                    <a href="https://www.youtube.com/watch?v=${videos[i].id.videoId}" target="_blank"><img width="300" height="200" src="${videos[i].snippet.thumbnails.medium.url}" alt="${videos[i].snippet.description}"></a>
+                    <a href="https://www.youtube.com/watch?v=${videos[i].id.videoId}" target="_blank"><img width="200" height="150" src="${videos[i].snippet.thumbnails.medium.url}" alt="${videos[i].snippet.description}"></a>
                         <p class="card-title"><a target= "_blank" href="https://www.youtube.com/watch?v=${videos[i].id.videoId}">${videos[i].snippet.title}</a></p>
                         `;
                     resultsEl.appendChild(videoEl);
