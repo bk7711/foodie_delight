@@ -8,6 +8,7 @@ body{
 nav{
     background-color: var(--dark);
 }
+
 header{
     height: 20vh;
     background-image: url("../images/virtual_cooking_classes_landing_page-44743_web.jpeg");
