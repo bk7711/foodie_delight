@@ -14,20 +14,30 @@ header{
 /* start of main section */
 .search{
     height:100vh;
-    border: 3px solid grey;
+    border-right: 2px solid grey;
 }
 .display{
     height:60vh;
     border: 3px solid grey;
+    border-bottom: none;
 }
 .results{
-    border: 3px solid grey;
     display:flex;
     flex-wrap:wrap;
     justify-content: space-around;
+    height:100%;
 }
 .col{
     flex-basis:0;
+}
+/* start of recipe container */
+h3{
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+}
+.recipes-container a{
+    text-align: center;
 }
 /* javascript added cards */
 .card{
