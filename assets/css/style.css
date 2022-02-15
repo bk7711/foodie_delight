@@ -86,6 +86,15 @@ h3{
 /* end of javascript added cards */
 
 /* end of main section */
+
+/* modal */
+#modal1{
+    text-align: center;
+    width: 50%;
+}
+#modal1 li{
+    font-size: 20px;
+}
 /* carousel */
 #savedRecipes{
     position:relative;

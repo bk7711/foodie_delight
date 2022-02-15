@@ -7,6 +7,7 @@ submitEl.addEventListener("click", function(event) {
     event.preventDefault();
     console.log("button pressed")
     const recipe = searchform.value;
+    $("#searched").textContent = recipe
     console.log(recipe);
     sendApiRequest(recipe)
 });
