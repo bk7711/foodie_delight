@@ -3,6 +3,7 @@ let submitEl = document.querySelector(".btn")
 let recipeContainerEl = document.querySelector(".recipes-container")
 
 //Add an event listener to the button that runs the function sendApiRequest when it is clicked
+
 submitEl.addEventListener("click", function(event) {
     event.preventDefault();
     console.log("button pressed")
@@ -15,17 +16,17 @@ submitEl.addEventListener("click", function(event) {
 
 //An asynchronous function to fetch data from the API.
 async function sendApiRequest(recipe) {
-    let APP_ID = "f2d9105a"
-    let API_KEY = "7e7ed414fbe548206f56d07e54706bea"
-    
-//currently you have to change what you want manualy otherwise you cant search anything new
-    let response = await fetch(`https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}&q=${recipe}`);
-    console.log(response)
-    let data = await response.json()
+  let APP_ID = "f2d9105a"
+  let API_KEY = "7e7ed414fbe548206f56d07e54706bea"
 
-    console.log(data)
+  //currently you have to change what you want manualy otherwise you cant search anything new
+  let response = await fetch(`https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}&q=${recipe}`);
+  console.log(response)
+  let data = await response.json()
 
-    useApiData(data)
+  console.log(data)
+
+  useApiData(data)
 }
 
 
@@ -160,5 +161,4 @@ function useApiData(data) {
   
 //   `
 // }
-
 

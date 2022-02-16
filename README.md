@@ -12,8 +12,9 @@ and you will be presented with different options to chose. If you need any assis
 
 
 ## Technologies Used
-* ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 * ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+* ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
 ## Contributions
 * [Carolyn Blackwell ](https://github.com/bk7711)
 * [Raymond Williams ](https://github.com/RayWillie)
