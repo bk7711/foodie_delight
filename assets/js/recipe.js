@@ -5,6 +5,7 @@ let recipeContainerEl = document.querySelector(".recipes-container")
 //Add an event listener to the button that runs the function sendApiRequest when it is clicked
 submitEl.addEventListener("click", function(event) {
     event.preventDefault();
+    $(recipeContainerEl).empty(); 
     console.log("button pressed")
     const recipe = searchform.value;
     $("#searched").textContent = recipe
@@ -34,6 +35,8 @@ function useApiData(data) {
     
     console.log(data);
     for(var i = 0; i<data.hits.length; i++){
+        var title = document.createElement('h3');
+        title.textContent = "Recipes"
         //create container
         var recipe = document.createElement('div');
         recipe.setAttribute("class", "recipe");

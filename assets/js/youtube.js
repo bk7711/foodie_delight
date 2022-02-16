@@ -60,9 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //when search button is clicked, display api results
 buttonEl.addEventListener("click", function(){
+    
     searchItem();
     getVideo();
-    searchEl.textContent = "";
+    searchEl.value = "";
+    $(resultsEl).empty();
 });
 
 modalEl.addEventListener("click", function(){
