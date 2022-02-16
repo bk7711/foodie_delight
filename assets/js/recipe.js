@@ -31,7 +31,7 @@ async function sendApiRequest(recipe) {
 //function that does something with the data received from the API. The name of the function should be customized to whatever you are doing with the data
 function useApiData(data) {
    
-        document.querySelector(".recipes-container").innerHTML = `
+        document.querySelector(".card-container").innerHTML = `
     <div class="row">
     <div class="col s6">
       <div class="card">
@@ -78,7 +78,6 @@ function useApiData(data) {
       </div>
     </div>
 
-    <div class="row">
     <div class="col s6">
       <div class="card">
         <div class="card-image" id = "5">
@@ -101,8 +100,7 @@ function useApiData(data) {
         </div>
       </div>
     </div>
-  
-    <div class="col s6">
+    <!--     <div class="col s6">
       <div class="card">
         <div class="card-image" id="7">
           <img src="${data.hits[7].recipe.image}">
@@ -122,7 +120,8 @@ function useApiData(data) {
           <span>${data.hits[8].recipe.label}</span>
         </div>
       </div>
-    </div>
+    </div> -->
+
   `
 }
 
