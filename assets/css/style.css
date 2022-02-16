@@ -13,6 +13,7 @@ nav{
     
 }
 header{
+    margin-bottom: 25px;
     height: 20vh;
     background-image: url("../images/virtual_cooking_classes_landing_page-44743_web.jpeg");
     background-size: cover;
@@ -23,13 +24,11 @@ header{
 
 /* start of main section */
 .search{
-    height: 105vh;
-    border-right: 2px solid grey;
+    height: 120vh;
+    border-right: 3px solid grey;
 }
 .display{
-    height:60vh;
-    border: 3px solid grey;
-    border-bottom: none;
+    height: 120vh;
 }
 .results{
     display:flex;
