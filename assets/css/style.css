@@ -8,23 +8,103 @@ body{
 nav{
     background-color: var(--dark);
 }
+
 header{
     height: 20vh;
+    background-image: url("../images/virtual_cooking_classes_landing_page-44743_web.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 80%;
+    z-index: 9999
 }
 /* start of main section */
 .search{
-    height:60vh;
-    border: 3px solid grey;
+    height:100vh;
 }
 .display{
     height:60vh;
     border: 3px solid grey;
+    border-bottom: none;
 }
 .results{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    height:auto;
+}
+.col{
+    flex-basis:0;
+}
+/* start of recipe container */
+h3{
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+}
+.recipes-container{
+    margin-left:10px;
+    overflow:scroll;
     height:100vh;
+}
+.recipes-container a{
+    text-align: center;
+    height:100%;
+}
+.recipes-container .recipe{
+    display:flex;
     border: 3px solid grey;
 }
+.recipes-container img{
+    border-radius: 15px;
+    width:200px;
+    height:150px;  
+}
+#ingredients{
+    margin-left: 10px;
+}
+.picture p{
+    text-align: center;
+}
+/* javascript added cards */
+.videos .card{
+    margin:10px;
+    max-width:200px;
+    border-radius: 15px;
+}
+.card img{
+    border-radius: 15px;
+}
+.card img:hover{
+    opacity: 70%;
+}
+.card .card-title{
+    font-size: 12px;
+    height: 40px;
+    text-align: center;
+}
+.card-title a{
+    color:rgb(68, 0, 255);
+    text-decoration: none;
+}
+.card-title a:visited{
+    color:rgb(78, 78, 78);
+}
+/* end of javascript added cards */
+
 /* end of main section */
+
+/* modal */
+#modal1{
+    text-align: center;
+    width: 50%;
+}
+#modal1 li{
+    font-size: 20px;
+}
+/* carousel */
+#savedRecipes{
+    position:relative;
+}
 footer{
     background-color: var(--dark);
 }
