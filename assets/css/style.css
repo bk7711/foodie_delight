@@ -1,19 +1,24 @@
 :root{
     --dark: rgb(37, 37, 109);
+    --font-family: 'Gloria Hallelujah', 'Saira Condensed', sans-serif;
+    --font-color-primary: rgb(255, 153, 0);
+    --font-color-secondary: rgb(199, 147, 147);
 }
+
 
 body{
     background-color: white;
 }
 nav{
     background-color: var(--dark);
+    padding: 1px 1px 1px 5px;
 }
 .brand-logo{
     color: antiquewhite;
     
 }
 header{
-    margin-bottom: 25px;
+    margin-bottom: 1px;
     height: 20vh;
     background-image: url("../images/virtual_cooking_classes_landing_page-44743_web.jpeg");
     background-size: cover;
@@ -26,6 +31,13 @@ header{
 .search{
     height: 120vh;
     border-right: 3px solid grey;
+}
+.search p {
+        font-family: var(--font-family);
+        font-size: 24px;
+        text-shadow: 2px 2px 2px rgb(223, 223, 223);
+        
+        
 }
 .display{
     height: 120vh;
@@ -44,11 +56,12 @@ h3{
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+    font-family: var(--font-family);
 }
 .recipes-container{
-    margin-left:10px;
-    overflow:scroll;
-    height:100vh;
+    margin-left: 10px;
+    overflow: scroll;
+    height: 100vh;
 }
 .recipes-container a{
     text-align: center;
@@ -68,6 +81,11 @@ h3{
 }
 .picture p{
     text-align: center;
+}
+.videos {
+    font-size: var(--font-family);
+    
+
 }
 /* javascript added cards */
 .videos .card{
