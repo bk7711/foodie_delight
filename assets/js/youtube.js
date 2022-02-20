@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //when search button is clicked, display api results
 buttonEl.addEventListener("click", function(){
     searchItem();
-    // getVideo();
+    getVideo();
     searchEl.value = "";
     $(resultsEl).empty();
 });
