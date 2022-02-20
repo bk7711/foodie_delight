@@ -43,6 +43,9 @@ button {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+#history {
+    margin: 15px;
+}
 
 .results {
     display:flex;
@@ -50,9 +53,9 @@ button {
     justify-content: space-around;
     height:auto;
 }
-/* .col {
-    flex-basis: ;
-} */
+.col {
+    flex-basis: 1 ;
+}
 /* start of recipe container */
 h3 {
     text-align: center;
