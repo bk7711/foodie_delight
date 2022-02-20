@@ -1,6 +1,6 @@
 :root{
     --dark: rgb(37, 37, 109);
-    --font-family: 'Gloria Hallelujah', 'Saira Condensed', sans-serif;
+    --font-family: 'Gloria Hallelujah', sans-serif;
     --font-color-primary: rgb(255, 153, 0);
     --font-color-secondary: rgb(199, 147, 147);
 }
@@ -29,47 +29,52 @@ header{
 
 /* start of main section */
 .search{
-    height: 120vh;
-    border-right: 3px solid grey;
+    height: auto;
+    /* border-right: 3px solid grey; */
 }
 .search p {
         font-family: var(--font-family);
         font-size: 24px;
         text-shadow: 2px 2px 2px rgb(223, 223, 223);
-        
-        
+        color: var(--font-color-primary);
 }
-.display{
-    height: 120vh;
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-.results{
+
+.results {
     display:flex;
     flex-wrap:wrap;
     justify-content: space-around;
     height:auto;
 }
-.col{
-    flex-basis:0;
-}
+/* .col {
+    flex-basis: ;
+} */
 /* start of recipe container */
-h3{
+h3 {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
     font-family: var(--font-family);
+    color: var(--font-color-primary); 
+    border-radius: 10px;
+    border: 2px solid #73AD21;
 }
-.recipes-container{
+.recipes-container {
     margin-left: 10px;
     overflow: scroll;
-    height: 100vh;
+    height: auto;
 }
-.recipes-container a{
+.recipes-container a {
     text-align: center;
-    height:100%;
+    height:auto;
 }
 .recipes-container .recipe{
     display:flex;
     border: 3px solid grey;
+    margin-bottom: 10 px;
 }
 .recipes-container img{
     border-radius: 15px;
@@ -82,10 +87,10 @@ h3{
 .picture p{
     text-align: center;
 }
+/* End of recipe container */
 .videos {
     font-size: var(--font-family);
-    
-
+        color: var(--font-color-primary);
 }
 /* javascript added cards */
 .videos .card{
@@ -113,7 +118,7 @@ h3{
 
 .card-content {
     font-size: 12px;
-    height: 100px;
+    height: auto;
 }
 /* end of javascript added cards */
 
