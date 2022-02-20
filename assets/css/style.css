@@ -69,6 +69,11 @@ h3{
 .picture p{
     text-align: center;
 }
+.save{
+    border-radius: 100%;
+    height: 50px;
+    width:50px;
+}
 /* javascript added cards */
 .videos .card{
     margin:10px;
@@ -109,10 +114,16 @@ h3{
 #modal1 li{
     font-size: 20px;
 }
+#modal2{
+    width:30%;
+    text-align:center;
+}
 /* carousel */
 #savedRecipes{
     position:relative;
+    height: 700px;
 }
+
 footer{
     background-color: var(--dark);
 }

@@ -9,10 +9,11 @@
         <title>Let's bring out yout inner chef!</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
     <body>
@@ -51,7 +52,7 @@
                   
                   </div>
                <!-- Modal Structure -->
-               <div id="modal1" class="modal">
+               <div id="modal1" class="modal history">
                   <div class="modal-content">
                     <h4>Search History</h4>
                     
@@ -76,13 +77,18 @@
     </main>
 
     <section class="col s12" id = "savedRecipes">
+      <h3>Saved Recipes</h3>
       <div class="carousel">
-        <h3>Saved Recipes</h3>
-        <a class="carousel-item" href="#one!"><img src="./assets/images/celldesk.jpg"></a>
-        <a class="carousel-item" href="#two!"><img src="./assets/images/connect.jpg"></a>
-        <a class="carousel-item" href="#three!"><img src="./assets/images/desk.jpg"></a>
-        <a class="carousel-item" href="#four!"><img src="./assets/images/paintset.jpg"></a>
-        <a class="carousel-item" href="#five!"><img src="./assets/images/wooddesk.jpg"></a>
+        <!-- saved recipe modal -->
+        <div id="modal2" class="modal recipe">
+          <div class="modal-content">
+            <h4>Ingredients</h4>
+            <div class = "modalTwo"></div>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+          </div>
+      </div>
       </div>
     </section>
       
@@ -119,7 +125,7 @@
   <script src="https://apis.google.com/js/api.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
   <script src="./assets/js/recipe.js"></script>
   <script src="./assets/js/youtube.js"></script>
 
