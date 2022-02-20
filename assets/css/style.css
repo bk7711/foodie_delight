@@ -8,6 +8,7 @@
 
 body{
     background-color: white;
+    font-family: var(--font-family);
 }
 nav{
     background-color: var(--dark);
@@ -79,7 +80,8 @@ h3 {
 .recipes-container img{
     border-radius: 15px;
     width:200px;
-    height:150px;  
+    height:150px;
+    margin: 5px 0px 0px 5px; 
 }
 #ingredients{
     margin-left: 10px;

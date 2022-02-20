@@ -40,7 +40,7 @@
           <div class="search">
             <div class="input-field">
               <p class="">
-                Let's get some ideas. Search a recipe below:
+                Have no idea what to cook? Search a recipe below:
               </p>
               <input placeholder="Search recipe" id="search" type="text" class="validate" name="search">
             </div>
@@ -51,51 +51,36 @@
               <div class="col">
                 <a href=""data-target="modal1" class="modal-trigger col" id="history">Search History</a>
               </div>
+              <!-- Modal Structure -->
+               <div id="modal1" class="modal">
+                   <div class="modal-content">
+                      <h4>Search History</h4>                               
+                    </div>
+                        <div class="modal-footer">
+                          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                        </div>
+                  </div>
+              </div>
             
           </div>
 
         </div>
-        <div class="row s12 m5">
-            <!--<div class="col s12 m5 search">
-                 <div class="input-field">
-                  <p class="text-center">
-                    Let's get some ideas. Search a recipe below:
-                  </p>
-                  <input placeholder="Search recipe" id="search" type="text" class="validate" name="search">
+        <div class="row">
+          <div class="recipes-container col s12 m5 l6">
+            <h3><span id="searched"></span>Recipes</h3>
                   
-                  <button type="submit" class="waves-effect waves-light btn">Search</button>
-                  <br>
-                  <a href=""data-target="modal1" class="modal-trigger" id="history">Search History</a>
-                 -->
-                  <div class="recipes-container row">
-                  <h3><span id="searched"></span>Recipes</h3>
-                  
-                  </div>
-               <!-- Modal Structure -->
-                <div id="modal1" class="modal">
-                  <div class="modal-content">
-                    <h4>Search History</h4>
-                    
-                  </div>
-                  <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-                  </div>
-                </div>
-              </div>
-        </div>
-            
-            <div class="col s12 m7 videos">
-                <h3>Video Tutorials</h3>
-                <div class = "row results">
-                
-                </div>
-              </div>
           </div>
+            
+          <div class="col s12 m5 l6 videos">
+            <h3>Video Tutorials</h3>
+              <div class="row results"></div>
+          </div>
+        </div>
         
       </div>
         
     </main>
-    <div class="container">
+    
       <section class="col s12" id="savedRecipes">
         <div class="carousel">
           <h3>Saved Recipes</h3>
@@ -106,7 +91,7 @@
           <a class="carousel-item" href="#five!"><img src="./assets/images/wooddesk.jpg"></a>
         </div>
       </section>
-    </div>
+    
       
 
 
