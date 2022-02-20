@@ -1,18 +1,28 @@
 let searchform = document.querySelector("#search")
 let submitEl = document.querySelector(".btn")
 let recipeContainerEl = document.querySelector(".recipes-container")
+let carouselEl = document.querySelector(".carousel");
+
 
 //Add an event listener to the button that runs the function sendApiRequest when it is clicked
 
 submitEl.addEventListener("click", function(event) {
     event.preventDefault();
+    $(recipeContainerEl).empty();
     console.log("button pressed")
     const recipe = searchform.value;
     $("#searched").textContent = recipe
     console.log(recipe);
     sendApiRequest(recipe)
 });
-
+// var showIngredients = function(){
+//     var modalIngredients = $(event.target).parent();
+//     console.log(modalIngredients);
+//     var modalTwo = document.querySelector(".modalTwo");
+//     modalTwo.innerHTML = modalIngredients;
+//     var elems = document.querySelectorAll('.modal');
+//     var instances = M.Modal.init(elems, "inDuration");
+// }
 
 //An asynchronous function to fetch data from the API.
 async function sendApiRequest(recipe) {
@@ -40,15 +50,23 @@ function useApiData(data) {
         recipe.setAttribute("class", "recipe");
         var imageBox = document.createElement('div');
         imageBox.setAttribute("class", "picture");
-        //create Img and p tag
+        //create Img and p tag and save button
         var recipeImg = document.createElement('img');
         var recipeTitle = document.createElement('p');
+        var saveRecipe = document.createElement('div');
         //fill in image and p tag with data results
         recipeTitle.textContent = data.hits[i].recipe.label;
         recipeImg.setAttribute("src", data.hits[i].recipe.image);
+        saveRecipe.setAttribute("id", "btn" + [i]);
+        saveRecipe.setAttribute("class", "recipeButton")
+        saveRecipe.innerHTML = `
+        <a class="waves-effect waves-light btn-small save"><i class="small material-icons">save</i></a>
+        `
+        
         //append img and p tag to recipe div
         imageBox.appendChild(recipeImg);
         imageBox.appendChild(recipeTitle);
+        imageBox.appendChild(saveRecipe);
         recipe.appendChild(imageBox);
 
         //create ingredients container
@@ -56,7 +74,7 @@ function useApiData(data) {
         ingredients.setAttribute("id", "ingredients")
         //create ul for ingredients
         var list = document.createElement('ul');
-        list.setAttribute("id","list");
+        list.setAttribute("class","list");
         //loop through ingredientsList array and create li for each ingredient line
         var ingredientsArray = data.hits[i].recipe.ingredientLines
         for (var k = 0; k < ingredientsArray.length; k++){
@@ -71,94 +89,55 @@ function useApiData(data) {
         //append recipe and ingredients divs to recipe container
         recipeContainerEl.appendChild(recipe);
         recipe.appendChild(ingredients);
-    }
-   
-};
-//         document.querySelector(".recipes-container").innerHTML = `
-// <div class="row">
-//     <div class="col s6">
-//       <div class="card">
-//         <div class="card-image" id = "0">
-//           <img src="${data.hits[0].recipe.image}">
-//         </div>
-//         <div class="card-content">
-//         <span>${data.hits[0].recipe.label}</span>
-//         </div>
-//     </div>
-//     <div class="card ingredients displayIngredients">
-//           <h4>Ingredients</h4>
-//             <div class="card-content">
-//                 <ul class="ingredient-items">
-//                 <li>${data.hits[0].recipe.ingredientLines[0]}</li>
-//                 <li>${data.hits[1].recipe.ingredientLines[0]}</li>
-//                 <li>${data.hits[2].recipe.ingredientLines[0]}</li>
-//                 <li>${data.hits[3].recipe.ingredientLines[0]}</li>
-//                 <li>${data.hits[4].recipe.ingredientLines[0]}</li>
-//                 <li>${data.hits[5].recipe.ingredientLines[0]}</li>
-//                 </ul>
-//             </div>
-//           </div>
-    
-//     </div>
-  
-  
-//     <div class="col s6">
-//       <div class="card">
-//         <div class="card-image" id = "1">
-//           <img src="${data.hits[1].recipe.image}">
-//         </div>
-//         <div class="card-content">
-//           <span>${data.hits[1].recipe.label}</span>
-//         </div>
-//       </div>
-//     </div>
-  
-//     <div class="col s6">
-//       <div class="card">
-//         <div class="card-image" id="2">
-//           <img src="${data.hits[2].recipe.image}">
-//         </div>
-//         <div class="card-content">
-//           <span>${data.hits[2].recipe.label}</span>
-//         </div>
-//       </div>
-//     </div>
-  
-//     <div class="col s6">
-//       <div class="card">
-//         <div class="card-image" id="3">
-//           <img src="${data.hits[3].recipe.image}">
-//         </div>
-//         <div class="card-content">
-//           <span>${data.hits[3].recipe.label}</span>
-//         </div>
-//       </div>
-//     </div>
 
-//     <div class="row">
-//     <div class="col s6">
-//       <div class="card">
-//         <div class="card-image" id = "5">
-//           <img src="${data.hits[4].recipe.image}">
-//         </div>
-//         <div class="card-content">
-//         <span>${data.hits[4].recipe.label}</span>
-//         </div>
-//       </div>
-//     </div>
-  
-  
-//     <div class="col s6">
-//       <div class="card">
-//         <div class="card-image" id = "6">
-//           <img src="${data.hits[5].recipe.image}">
-//         </div>
-//         <div class="card-content">
-//           <span>${data.hits[5].recipe.label}</span>
-//         </div>
-//       </div>
-//     </div>
-  
-//   `
-// }
+         
+         
+          
+    }
+    $('.recipeButton').on("click", function(){
+            var j = 1
+             console.log('click');
+             console.log(event.currentTarget);
+             //create a carousel link with innerHTML
+             var savePicture = ($(event.currentTarget)).parent().children(['img']);
+             var savedPicture = savePicture.attr("src");
+            var saveIngredients = ($(event.currentTarget)).parent().siblings();
+            var savedIngredients = saveIngredients[0].innerHTML;
+            console.log(savedIngredients);
+            var carouselPage = document.createElement('div');
+            var carouselPageImg = document.createElement('img');
+            var cPageIngredients = document.createElement('div')
+            cPageIngredients.innerHTML = savedIngredients;
+            carouselPageImg.setAttribute('src',savedPicture);
+            $(carouselPageImg).on('click', showIngredients());
+            carouselPage.appendChild(carouselPageImg);
+            carouselPage.appendChild(cPageIngredients);
+            var carouselItem = document.createElement('a');
+            carouselItem.setAttribute('class', 'carousel-item');
+            carouselItem.setAttribute('href', '#'+ [j]);
+            // carouselItem.appendChild(carouselPageImg);
+            carouselItem.appendChild(carouselPage);
+            carouselEl.appendChild(carouselItem);
+            var elems = document.querySelectorAll('.carousel');
+            j++;
+        var elems = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(elems,{
+        padding: 20,
+        dist: -20
+    })
+   }); 
+};
+
+// var save = $(recipeContainerEl).on('click','.picture', function(event){
+//     console.log("click");
+//     console.log($(event.target));
+//     console.log($(event.target).parent(['div']));
+//     // console.log($(event.target).parent([div]));
+//     // console.log($(event.target).parent([div]).siblings([div]));
+
+// })
+
+    
+
+
 

@@ -35,8 +35,25 @@ var getVideo = function(){
 };
 
 var getHistory = function(){
+    searchHistory = [];
+    $(modalBoxEl).empty();
+    //get local storage data
+    searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+    //create ul and an li for each item in storage array
+    var searchList = document.createElement('ul')
+    
+    for (var i = 0; i < searchHistory.length; i++){
+        var searchedRecipe = document.createElement('li');
+        searchedRecipe.textContent = searchHistory[i];
+        searchList.appendChild(searchedRecipe);
+    }
+    //append ul list to modal in html
+    modalBoxEl.append(searchList);
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, "inDuration");
+    // instances.open();
 
-}
+};
 
 //get value of search field
 var searchItem = function(){
@@ -61,24 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
 //when search button is clicked, display api results
 buttonEl.addEventListener("click", function(){
     searchItem();
-    getVideo();
-    searchEl.textContent = "";
+    // getVideo();
+    searchEl.value = "";
+    $(resultsEl).empty();
 });
 
-modalEl.addEventListener("click", function(){
-    //get local storage data
-    searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
-    //create ul and an li for each item in storage array
-    var searchList = document.createElement('ul')
-    for (var i = 0; i < searchHistory.length; i++){
-        var searchedRecipe = document.createElement('li');
-        searchedRecipe.textContent = searchHistory[i];
-        searchList.appendChild(searchedRecipe);
-    }
-    //append ul list to modal in html
-    modalBoxEl.append(searchList);
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, "inDuration");
-    // instances.open();
-
-})
+modalEl.addEventListener("click", getHistory());
