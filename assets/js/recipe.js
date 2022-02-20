@@ -2,7 +2,7 @@ let searchform = document.querySelector("#search")
 let submitEl = document.querySelector(".btn")
 let recipeContainerEl = document.querySelector(".recipes-container")
 let carouselEl = document.querySelector(".carousel");
-
+let activeIngredientsEl = document.querySelector(".activeIngredients");
 
 //Add an event listener to the button that runs the function sendApiRequest when it is clicked
 
@@ -15,14 +15,12 @@ submitEl.addEventListener("click", function(event) {
     console.log(recipe);
     sendApiRequest(recipe)
 });
-// var showIngredients = function(){
-//     var modalIngredients = $(event.target).parent();
-//     console.log(modalIngredients);
-//     var modalTwo = document.querySelector(".modalTwo");
-//     modalTwo.innerHTML = modalIngredients;
-//     var elems = document.querySelectorAll('.modal');
-//     var instances = M.Modal.init(elems, "inDuration");
-// }
+var showIngredients = function(){
+    var modalIngredients = $(event.target).parent();
+    console.log(modalIngredients);
+    var modalTwo = document.querySelector(".modalTwo");
+    modalTwo.innerHTML = modalIngredients;
+}
 
 //An asynchronous function to fetch data from the API.
 async function sendApiRequest(recipe) {
@@ -68,13 +66,16 @@ function useApiData(data) {
         imageBox.appendChild(recipeTitle);
         imageBox.appendChild(saveRecipe);
         recipe.appendChild(imageBox);
+        
 
         //create ingredients container
         var ingredients = document.createElement('div');
         ingredients.setAttribute("id", "ingredients")
+
         //create ul for ingredients
         var list = document.createElement('ul');
         list.setAttribute("class","list");
+
         //loop through ingredientsList array and create li for each ingredient line
         var ingredientsArray = data.hits[i].recipe.ingredientLines
         for (var k = 0; k < ingredientsArray.length; k++){
@@ -96,26 +97,24 @@ function useApiData(data) {
     }
     $('.recipeButton').on("click", function(){
             var j = 1
-             console.log('click');
-             console.log(event.currentTarget);
+             
              //create a carousel link with innerHTML
              var savePicture = ($(event.currentTarget)).parent().children(['img']);
              var savedPicture = savePicture.attr("src");
             var saveIngredients = ($(event.currentTarget)).parent().siblings();
             var savedIngredients = saveIngredients[0].innerHTML;
-            console.log(savedIngredients);
+            
             var carouselPage = document.createElement('div');
             var carouselPageImg = document.createElement('img');
             var cPageIngredients = document.createElement('div')
             cPageIngredients.innerHTML = savedIngredients;
             carouselPageImg.setAttribute('src',savedPicture);
-            $(carouselPageImg).on('click', showIngredients());
             carouselPage.appendChild(carouselPageImg);
+            
             carouselPage.appendChild(cPageIngredients);
             var carouselItem = document.createElement('a');
             carouselItem.setAttribute('class', 'carousel-item');
             carouselItem.setAttribute('href', '#'+ [j]);
-            // carouselItem.appendChild(carouselPageImg);
             carouselItem.appendChild(carouselPage);
             carouselEl.appendChild(carouselItem);
             var elems = document.querySelectorAll('.carousel');
@@ -123,8 +122,14 @@ function useApiData(data) {
         var elems = document.querySelectorAll('.carousel');
         var instances = M.Carousel.init(elems,{
         padding: 20,
-        dist: -20
-    })
+        dist: -20,
+        onCycleTo:function(ele){
+            var activeIngredients = ele.childNodes[0].childNodes[1].innerHTML;
+            activeIngredientsEl.innerHTML = activeIngredients;
+            
+        }
+    }); 
+    // activeCarousel();
    }); 
 };
 
@@ -138,6 +143,13 @@ function useApiData(data) {
 // })
 
     
+// var activeCarousel = function(){
+//     var activePict = carouselEl.querySelector('.active');
+    
+// }
+
+    
+// activeCarousel();
 
 
 

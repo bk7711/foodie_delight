@@ -121,7 +121,21 @@ h3{
 /* carousel */
 #savedRecipes{
     position:relative;
-    height: 700px;
+    height: 900px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.carousel{
+    margin-right: 100px;
+}
+.activeIngredients{
+    height:400px;
+    width:300px;
+    overflow:scroll;
+    margin:20px;
+    margin-bottom: 0;
+    padding:10px;
 }
 
 footer{
